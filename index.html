@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Animated Text</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" charset="utf-8"></script>
+
+    <style media="screen">
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      body{
+        background: black;
+      }
+      .animateText{
+        list-style: none;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+      }
+      .animateText li{
+        display: inline-block;
+        margin-right: 50px;
+        font-family: Open sans-serif, Arial;
+        font-weight: 400;
+        font-size: 5em;
+        color: yellow;
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;
+        opacity: 1;
+        transition: all 2.5s ease;
+      }
+      .animateText li:last-child{
+        margin-right: 0;
+      }
+      .animateText.hidden{
+        opacity: 0;
+
+      }
+      .animateText.hidden li:nth-child(1) { transform: translateX(-400px) translateY(-400px) rotate(-360deg) scale(-5);}
+      .animateText.hidden li:nth-child(2) { transform: translateX(-200px) translateY(300px) rotateX(360deg);}
+      .animateText.hidden li:nth-child(3) { transform: translateX(-150px) translateY(-200px) rotate(-360deg);}
+      .animateText.hidden li:nth-child(4) { transform: translateX(0px) translateY(0px)rotateY(360deg) scale(5); color: purple;}
+      .animateText.hidden li:nth-child(5) { transform: translateX(-700px) translateY(200px);}
+      .animateText.hidden li:nth-child(6) { transform: translateX(20px) translateY(-400px) rotateY(-360deg);}
+      .animateText.hidden li:nth-child(7) { transform: translateX(300px) translateY(300px) rotate(360deg) scale(-2);}
+    </style>
+  </head>
+  <body>
+    <ul class="animateText hidden">
+      <li>W</li>
+      <li>E</li>
+      <li>L</li>
+      <li>C</li>
+      <li>O</li>
+      <li>M</li>
+      <li>E</li>
+    </ul>
+
+    <script type="text/javascript">
+      $(function(){
+
+        setTimeout(function() {
+          $('.animateText').removeClass('hidden');
+        }, 500);
+
+      })();
+    </script>
+
+
+  </body>
+</html>
